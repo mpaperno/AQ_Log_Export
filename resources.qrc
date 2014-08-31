@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/app_icon.ico</file>
+        <file>resources/application-monitor.png</file>
+        <file>resources/folder-horizontal-open.png</file>
+        <file>resources/folder-search-result.png</file>
+        <file>resources/view-refresh.svg</file>
+        <file>resources/cross-small.png</file>
+        <file>resources/document-export.png</file>
+    </qresource>
+</RCC>
