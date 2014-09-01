@@ -690,8 +690,9 @@ void AQLogExporter::loadTranslations()
 
 	foreach (QFileInfo file, entries)
 	{
-		// pick country and language out of the file name
+		// pick country and language out of the file name (progName_lang_country)
 		QStringList parts = file.baseName().split("_");
+		parts.removeFirst();
 		if (parts.count() > 1) {
 			language = parts.at(parts.count() - 2).toLower();
 			country  = parts.at(parts.count() - 1).toUpper();

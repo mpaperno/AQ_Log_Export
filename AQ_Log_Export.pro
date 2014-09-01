@@ -41,9 +41,9 @@ FORMS    += aqlogexporter.ui
 
 RESOURCES += resources.qrc
 
-TRANSLATIONS += resources/lang/de.ts \
-	 resources/lang/en.ts \
-	 resources/lang/pl.ts
+TRANSLATIONS += resources/lang/logExport_de.ts \
+	 resources/lang/logExport_en.ts \
+	 resources/lang/logExport_pl.ts
 
 
 # Windows (32bit)
