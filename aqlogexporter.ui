@@ -1985,7 +1985,7 @@
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Tip: Hover over form fields for details, and/or use the Help buttonl to get more information about each group of options.</string>
+           <string>Tip: Hover over form fields for details, and/or use the Help button to get more information about each group of options.</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>

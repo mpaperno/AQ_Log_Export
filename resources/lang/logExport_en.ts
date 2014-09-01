@@ -708,6 +708,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../aqlogexporter.ui" line="1988"/>
+        <source>Tip: Hover over form fields for details, and/or use the Help button to get more information about each group of options.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../aqlogexporter.ui" line="1819"/>
         <source>Select a language for the user interface.</source>
         <translation type="unfinished"></translation>
@@ -715,11 +720,6 @@
     <message>
         <location filename="../../aqlogexporter.ui" line="1822"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../aqlogexporter.ui" line="1988"/>
-        <source>Tip: Hover over form fields for details, and/or use the Help buttonl to get more information about each group of options.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

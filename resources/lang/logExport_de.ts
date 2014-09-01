@@ -695,7 +695,7 @@
     <message>
         <location filename="../../aqlogexporter.ui" line="1958"/>
         <source>Export Result Actions:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exportergebnis Aktionen:</translation>
     </message>
     <message>
         <location filename="../../aqlogexporter.ui" line="1965"/>
@@ -708,6 +708,11 @@
         <translation>Hilfe</translation>
     </message>
     <message>
+        <location filename="../../aqlogexporter.ui" line="1988"/>
+        <source>Tip: Hover over form fields for details, and/or use the Help button to get more information about each group of options.</source>
+        <translation type="unfinished">Tipp: Zeigen Sie auf Formularfelder für Details, und / oder verwenden Sie die Schaltfläche Hilfe, um weitere Informationen über jede Gruppe von Optionen zu erhalten.</translation>
+    </message>
+    <message>
         <location filename="../../aqlogexporter.ui" line="1819"/>
         <source>Select a language for the user interface.</source>
         <translation>Wählen Sie Sprache.</translation>
@@ -718,9 +723,8 @@
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1988"/>
         <source>Tip: Hover over form fields for details, and/or use the Help buttonl to get more information about each group of options.</source>
-        <translation type="unfinished">Tipp: Verwenden Sie das Tool &quot;Was ist&quot; (? Symbol) um weitere Informationen zu jeder Gruppe von Optionen zu erhalten.</translation>
+        <translation type="obsolete">Tipp: Verwenden Sie das Tool &quot;Was ist&quot; (? Symbol) um weitere Informationen zu jeder Gruppe von Optionen zu erhalten.</translation>
     </message>
     <message>
         <location filename="../../aqlogexporter.ui" line="2014"/>
@@ -740,7 +744,7 @@
     <message>
         <location filename="../../aqlogexporter.cc" line="126"/>
         <source>Click to open online help in your browser.</source>
-        <translation type="unfinished">Hilfe.</translation>
+        <translation type="unfinished">Klicken Sie auf die Online-Hilfe in Ihrem Browser zu öffnen.</translation>
     </message>
     <message>
         <location filename="../../aqlogexporter.cc" line="173"/>
@@ -785,7 +789,7 @@
     <message>
         <location filename="../../aqlogexporter.cc" line="803"/>
         <source>Could not open help page in your browser. To get to the online help, please go to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnte nicht geöffnet Hilfe-Seite in Ihrem Browser. Um auf die Online-Hilfe zu erhalten, gehen Sie bitte zu %1.</translation>
     </message>
     <message>
         <location filename="../../aqlogexporter.cc" line="840"/>
