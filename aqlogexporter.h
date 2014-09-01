@@ -5,6 +5,10 @@
 #include <QProcess>
 #include <QSettings>
 
+class QTranslator;
+
+typedef QHash<QString, QTranslator*> Translators;
+
 namespace Ui {
 class AQLogExporter;
 }
@@ -21,7 +25,7 @@ public:
 
 protected:
 	enum statusMsgTypes { MSG_PLAIN, MSG_INFO, MSG_SUCCESS, MSG_WARNING, MSG_ERROR};
-	//void closeEvent(QCloseEvent *event);
+
 
 private:
 	void newLogFile();
@@ -33,10 +37,20 @@ private:
 	void readSettings();
 	void writeSettings();
 
+	void loadTranslations();
+
 signals:
 	void formValidRecheck();
 
+protected slots:
+	void changeEvent(QEvent *e);
+
 private slots:
+	void setLanguage(const QString &locale);
+	void createLanguageMenu(void);
+	void languageChanged(QAction* action);
+	void loadLanguage(const QString& lang);
+
 	void extProcessExit(int exitcode);
 	void extProcessStdErr();
 	void extProcessError(QProcess::ProcessError err);
@@ -60,6 +74,13 @@ private slots:
 	void on_toolButton_autoExportFile_clicked();
 
 private:
+	QString langPath;
+	QTranslator* currentTranslator;
+	Translators translators;
+	QString defaultLanguage;     /**< contains the default language */
+	QString currentLanguage;     /**< contains the currently loaded language */
+
+
 	Ui::AQLogExporter *ui;
 	QSettings settings;
 	QProcess ps_export;

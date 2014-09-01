@@ -9,21 +9,45 @@
 #include <QUrl>
 #include <QDate>
 #include <QWhatsThis>
+#include <QTranslator>
+#include <QDir>
+#include <QFileInfo>
 
 #include <QDebug>
 
 AQLogExporter::AQLogExporter(QWidget *parent) :
 	QMainWindow(parent),
-	ui(new Ui::AQLogExporter)
+	ui(new Ui::AQLogExporter),
+	currentTranslator(0)
 {
+
+	langPath = QApplication::applicationDirPath() + "/lang";
+	loadTranslations();
+
+	// format systems language
+	defaultLanguage = QLocale::system().name();       // e.g. "de_DE"
+	defaultLanguage.truncate(defaultLanguage.lastIndexOf('_')); // e.g. "de"
+	defaultLanguage = settings.value("UI_LANGUAGE", defaultLanguage).toString();
+
+	setLanguage(defaultLanguage);
+	currentLanguage = defaultLanguage;
 
 	ui->setupUi(this);
 
 	QString windowname = APP_NAME + " v" + APP_VERSION_TXT + " (" + QString::number(APP_VERSION, 'f', 2) + ")";
 	setWindowTitle(windowname);
 
+#ifndef QT_NO_WHATSTHIS
 	// add "whats this" action to help button
-	ui->toolButton_help->setDefaultAction(QWhatsThis::createAction(this));
+	QAction *act(QWhatsThis::createAction(this));
+	act->setIcon(ui->toolButton_help->icon());
+	ui->toolButton_help->setDefaultAction(act);
+#else
+	ui->toolButton_help->hide();
+#endif
+
+	// load language choices
+	createLanguageMenu();
 
 	//
 	// populate class vars
@@ -82,6 +106,18 @@ AQLogExporter::~AQLogExporter()
 		ps_export.close();
 	writeSettings();
 	delete ui;
+}
+
+void AQLogExporter::changeEvent(QEvent *e)
+{
+	QMainWindow::changeEvent(e);
+	switch (e->type()) {
+		case QEvent::LanguageChange:
+			ui->retranslateUi(this);
+			break;
+		default:
+			break;
+	}
 }
 
 /**
@@ -238,6 +274,7 @@ void AQLogExporter::autoExportFileName() {
 	//	if (savedOutputPath.length())
 	//		 expDir = savedOutputPath;
 	ui->lineEdit_outputFile->setText(QDir::toNativeSeparators(expDir + "/" + expName));
+	emit formValidRecheck();
 }
 
 /**
@@ -550,6 +587,7 @@ void AQLogExporter::writeSettings() {
 	settings.setValue("ChannelValueTypeId", ui->buttonGroup_trigChanValues->id(ui->buttonGroup_trigChanValues->checkedButton()));
 	settings.setValue("TriggerValueGT", ui->spinBox_trigVal_gt->value());
 	settings.setValue("TriggerValueLT", ui->spinBox_trigVal_lt->value());
+	settings.setValue("UI_LANGUAGE", currentLanguage);
 
 	foreach (QAbstractButton *curBtn, ui->buttonGroup_exportValues->buttons() + ui->buttonGroup_gpsExportVals->buttons()) {
 		if (curBtn->isChecked())
@@ -634,6 +672,114 @@ void AQLogExporter::extProcessError(QProcess::ProcessError err) {
 	}
 	writeMsgToStatusWindow(msg, MSG_ERROR);
 }
+
+
+//
+// Translation handling
+//
+
+void AQLogExporter::loadTranslations()
+{
+	// <language>_<country>.qm or <language.qm>
+	QDir dir(langPath);
+	QString filter = "*.qm";
+	QDir::Filters filters = QDir::Files | QDir::Readable;
+	QDir::SortFlags sort = QDir::Name;
+	QFileInfoList entries = dir.entryInfoList(QStringList() << filter, filters, sort);
+	QString language, country;
+
+	foreach (QFileInfo file, entries)
+	{
+		// pick country and language out of the file name
+		QStringList parts = file.baseName().split("_");
+		if (parts.count() > 1) {
+			language = parts.at(parts.count() - 2).toLower();
+			country  = parts.at(parts.count() - 1).toUpper();
+		} else {
+			language = parts.at(parts.count() - 1).toLower();
+			country = "";
+		}
+
+		qDebug() << __FILE__ << __LINE__ << "Loaded language file:" << file.absoluteFilePath() << language << country;
+
+		// construct and load translator
+		QTranslator* translator = new QTranslator(qApp);
+		if (translator->load(file.absoluteFilePath()))
+		{
+			QString locale = language + (country.length() ? "_" + country : "");
+			translators.insert(locale, translator);
+		}
+	}
+}
+
+void AQLogExporter::setLanguage(const QString& locale)
+{
+	// remove previous
+	if (currentTranslator)
+		qApp->removeTranslator(currentTranslator);
+
+	// install new
+	currentTranslator = translators.value(locale, 0);
+	if (currentTranslator)
+		qApp->installTranslator(currentTranslator);
+}
+
+// Called every time sn entry of the language menu is called
+void AQLogExporter::languageChanged(QAction* action)
+{
+	 if(action) {
+		  loadLanguage(action->data().toString());
+		  ui->toolButton_language->setIcon(action->icon());
+	 }
+}
+
+// we create the language menu entries dynamically, dependant on the existing translations.
+void AQLogExporter::createLanguageMenu(void)
+{
+	 QActionGroup* langGroup = new QActionGroup(ui->toolButton_language);
+	 langGroup->setExclusive(true);
+	 connect(langGroup, SIGNAL(triggered(QAction *)), this, SLOT(languageChanged(QAction *)));
+
+	 foreach (QString lang, QStringList(translators.keys()))
+	 {
+		  // figure out nice names for locales
+		  QLocale locale(lang);
+		  QString name = QLocale::languageToString(locale.language());
+
+		  // construct an action
+		  QIcon ico(QString(":/resources/flags/%2.png").arg(lang));
+
+		  QAction *action = new QAction(ico, name, this);
+		  action->setCheckable(true);
+		  action->setData(lang);
+
+		  langGroup->addAction(action);
+
+		  // set default translators and language checked
+		  if (currentLanguage == lang) {
+				action->setChecked(true);
+				ui->toolButton_language->setIcon(ico);
+		  }
+	 }
+	 ui->toolButton_language->addActions(langGroup->actions());
+
+}
+
+// Called every time, when a menu entry of the language menu is called
+void AQLogExporter::loadLanguage(const QString& lang)
+{
+	 if (currentLanguage != lang) {
+		  currentLanguage = lang;
+		  //loadLanguage(locale);
+		  setLanguage(currentLanguage);
+
+		  QLocale l = QLocale(currentLanguage);
+		  QLocale::setDefault(l);
+		  QString languageName = QLocale::languageToString(l.language());
+		  ui->statusBar->showMessage(tr("Current Language changed to %1").arg(languageName));
+	 }
+}
+
 
 
 //

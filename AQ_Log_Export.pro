@@ -41,6 +41,10 @@ FORMS    += aqlogexporter.ui
 
 RESOURCES += resources.qrc
 
+TRANSLATIONS += resources/lang/de.ts \
+	 resources/lang/en.ts \
+	 resources/lang/pl.ts
+
 
 # Windows (32bit)
 win32-msvc2008|win32-msvc2010 {
@@ -70,6 +74,8 @@ win32-msvc2008|win32-msvc2010 {
 
 	# Copy AQ files
 	QMAKE_POST_LINK += $$quote(xcopy /D /Y "$${BASEDIR}\\bin\\aq_win_all\\*" "$${TARGETDIR}\\aq\\bin" /E /I $$escape_expand(\\n))
+	# Copy language files
+	QMAKE_POST_LINK += $$quote(xcopy /D /Y "$${BASEDIR}\\resources\\lang\\*.qm" "$${TARGETDIR}\\lang" /E /I $$escape_expand(\\n))
 	# Qt library DLLs
 	QMAKE_POST_LINK += $$quote(xcopy /D /Y "$$(QTDIR)\\bin\\$${QTLIBDLLPFX}Core$${QTLIBDLLSFX}" "$$TARGETDIR"$$escape_expand(\\n))
 	QMAKE_POST_LINK += $$quote(xcopy /D /Y "$$(QTDIR)\\bin\\$${QTLIBDLLPFX}Gui$${QTLIBDLLSFX}" "$$TARGETDIR"$$escape_expand(\\n))
@@ -86,11 +92,16 @@ win32-msvc2008|win32-msvc2010 {
 macx|macx-g++42|macx-g++|macx-llvm: {
 
 	ICON = resources/app_icon.icns
+	DEFINES += QT_NO_WHATSTHIS
+	QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.6
 
 	# Copy AQ files
-	QMAKE_POST_LINK += && mkdir -p $${BASEDIR}/$${TARGET}.app/Contents/MacOS/aq/bin
+	QMAKE_POST_LINK += mkdir -p $${TARGETDIR}/$${TARGET}.app/Contents/MacOS/aq/bin
 	QMAKE_POST_LINK += && cp -rf $${BASEDIR}/bin/aq_osx_all/* $${TARGETDIR}/$${TARGET}.app/Contents/MacOS/aq/bin
-	QMAKE_POST_LINK += && chmod +x $${BASEDIR}/$${TARGET}.app/Contents/MacOS/aq/bin/*
+	QMAKE_POST_LINK += && chmod +x $${TARGETDIR}/$${TARGET}.app/Contents/MacOS/aq/bin/*
+	# Copy language files
+	QMAKE_POST_LINK += && mkdir -p $${TARGETDIR}/$${TARGET}.app/Contents/MacOS/lang
+	QMAKE_POST_LINK += && cp -rf $${BASEDIR}/resources/lang/*.qm $${TARGETDIR}/$${TARGET}.app/Contents/MacOS/lang
 
 }
 
@@ -111,7 +122,10 @@ linux-g++|linux-g++-64{
 	DESTDIR = $$TARGETDIR
 
 	# Copy AQ files
-	QMAKE_POST_LINK += && mkdir -p $${TARGETDIR}/aq/bin
+	QMAKE_POST_LINK += mkdir -p $${TARGETDIR}/aq/bin
 	QMAKE_POST_LINK += && cp -rf $${BASEDIR}/bin/aq_unix_all/* $${TARGETDIR}/aq/bin
 	QMAKE_POST_LINK += && chmod +x $${TARGETDIR}/aq/bin/*
+	# Copy language files
+	QMAKE_POST_LINK += && mkdir -p $${TARGETDIR}/lang
+	QMAKE_POST_LINK += && cp -rf $${BASEDIR}/resources/lang/*.qm $${TARGETDIR}/lang
 }

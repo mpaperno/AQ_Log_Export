@@ -4,8 +4,64 @@
         <file>resources/application-monitor.png</file>
         <file>resources/folder-horizontal-open.png</file>
         <file>resources/folder-search-result.png</file>
-        <file>resources/view-refresh.svg</file>
         <file>resources/cross-small.png</file>
         <file>resources/document-export.png</file>
+        <file>resources/arrow-transition-180.png</file>
+        <file>resources/help-whats-this.gif</file>
+        <file>resources/flags/ar.png</file>
+        <file>resources/flags/bg.png</file>
+        <file>resources/flags/ca.png</file>
+        <file>resources/flags/cs.png</file>
+        <file>resources/flags/da.png</file>
+        <file>resources/flags/de.png</file>
+        <file>resources/flags/el.png</file>
+        <file>resources/flags/en.png</file>
+        <file>resources/flags/eo.png</file>
+        <file>resources/flags/es.png</file>
+        <file>resources/flags/et.png</file>
+        <file>resources/flags/eu.png</file>
+        <file>resources/flags/fa.png</file>
+        <file>resources/flags/fi.png</file>
+        <file>resources/flags/fo.png</file>
+        <file>resources/flags/fr.png</file>
+        <file>resources/flags/ga.png</file>
+        <file>resources/flags/gl.png</file>
+        <file>resources/flags/he.png</file>
+        <file>resources/flags/hi.png</file>
+        <file>resources/flags/hr.png</file>
+        <file>resources/flags/hu.png</file>
+        <file>resources/flags/id.png</file>
+        <file>resources/flags/is.png</file>
+        <file>resources/flags/it.png</file>
+        <file>resources/flags/ja.png</file>
+        <file>resources/flags/km.png</file>
+        <file>resources/flags/ko.png</file>
+        <file>resources/flags/lb.png</file>
+        <file>resources/flags/lt.png</file>
+        <file>resources/flags/lv.png</file>
+        <file>resources/flags/mn.png</file>
+        <file>resources/flags/nb.png</file>
+        <file>resources/flags/nl.png</file>
+        <file>resources/flags/nn.png</file>
+        <file>resources/flags/pl.png</file>
+        <file>resources/flags/pt-br.png</file>
+        <file>resources/flags/pt-pt.png</file>
+        <file>resources/flags/ro.png</file>
+        <file>resources/flags/ru.png</file>
+        <file>resources/flags/sco.png</file>
+        <file>resources/flags/se.png</file>
+        <file>resources/flags/sk.png</file>
+        <file>resources/flags/sl.png</file>
+        <file>resources/flags/sq.png</file>
+        <file>resources/flags/sr.png</file>
+        <file>resources/flags/sv.png</file>
+        <file>resources/flags/tg.png</file>
+        <file>resources/flags/th.png</file>
+        <file>resources/flags/tl.png</file>
+        <file>resources/flags/tr.png</file>
+        <file>resources/flags/uk.png</file>
+        <file>resources/flags/vi.png</file>
+        <file>resources/flags/zh-hans.png</file>
+        <file>resources/flags/zh-hant.png</file>
     </qresource>
 </RCC>
