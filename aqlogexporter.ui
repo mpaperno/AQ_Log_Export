@@ -1797,6 +1797,38 @@
         <property name="verticalSpacing">
          <number>0</number>
         </property>
+        <item row="1" column="0" colspan="9">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::MinimumExpanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>13</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="5">
+         <widget class="QToolButton" name="toolButton_language">
+          <property name="toolTip">
+           <string>Select a language for the user interface.</string>
+          </property>
+          <property name="text">
+           <string>Language</string>
+          </property>
+          <property name="popupMode">
+           <enum>QToolButton::InstantPopup</enum>
+          </property>
+          <property name="autoRaise">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
         <item row="3" column="6">
          <widget class="QPushButton" name="pushButton_doExport">
           <property name="enabled">
@@ -1823,19 +1855,6 @@
           <property name="icon">
            <iconset resource="resources.qrc">
             <normaloff>:/resources/document-export.png</normaloff>:/resources/document-export.png</iconset>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="9">
-         <widget class="QLabel" name="label_tips">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Tip: Hover over form fields for details, and/or use the &quot;What's this&quot; tool to get more information about each group of options.</string>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -1904,22 +1923,6 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="0" colspan="9">
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::MinimumExpanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>13</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item row="3" column="0">
          <widget class="QToolButton" name="toolButton_openOutput">
           <property name="enabled">
@@ -1976,18 +1979,15 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="5">
-         <widget class="QToolButton" name="toolButton_language">
-          <property name="toolTip">
-           <string>Select a language for the user interface.</string>
+        <item row="0" column="0" colspan="9">
+         <widget class="QLabel" name="label_tips">
+          <property name="enabled">
+           <bool>false</bool>
           </property>
           <property name="text">
-           <string>Language</string>
+           <string>Tip: Hover over form fields for details, and/or use the Help buttonl to get more information about each group of options.</string>
           </property>
-          <property name="popupMode">
-           <enum>QToolButton::InstantPopup</enum>
-          </property>
-          <property name="autoRaise">
+          <property name="wordWrap">
            <bool>true</bool>
           </property>
          </widget>

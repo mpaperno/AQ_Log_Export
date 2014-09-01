@@ -43,7 +43,7 @@ AQLogExporter::AQLogExporter(QWidget *parent) :
 	act->setIcon(ui->toolButton_help->icon());
 	ui->toolButton_help->setDefaultAction(act);
 #else
-	ui->toolButton_help->hide();
+	connect(ui->toolButton_help, SIGNAL(clicked()), this, SLOT(showAQHelp()));
 #endif
 
 	// load language choices
@@ -114,10 +114,17 @@ void AQLogExporter::changeEvent(QEvent *e)
 	switch (e->type()) {
 		case QEvent::LanguageChange:
 			ui->retranslateUi(this);
+			retranslateUi();
 			break;
 		default:
 			break;
 	}
+}
+
+void AQLogExporter::retranslateUi() {
+#ifdef QT_NO_WHATSTHIS
+	ui->toolButton_help->setToolTip(tr("Click to open online help in your browser."));
+#endif
 }
 
 /**
@@ -786,6 +793,17 @@ void AQLogExporter::loadLanguage(const QString& lang)
 //
 // UI Event Handlers
 //
+
+
+void AQLogExporter::showAQHelp()
+{
+	QString url = "http://autoquad.org/wiki/wiki/aq-log-exporting-and-visualizing/";
+	if(!QDesktopServices::openUrl(QUrl(url)))
+	{
+		writeMsgToStatusWindow(tr("Could not open help page in your browser. To get to the online help, please go to %1.").arg(url), MSG_ERROR);
+	}
+}
+
 
 // log file edited manually
 void AQLogExporter::on_lineEdit_inputFile_editingFinished()

@@ -653,73 +653,73 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1818"/>
+        <location filename="../../aqlogexporter.ui" line="1850"/>
         <source>Click to perform export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1821"/>
+        <location filename="../../aqlogexporter.ui" line="1853"/>
         <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1835"/>
-        <source>Tip: Hover over form fields for details, and/or use the &quot;What&apos;s this&quot; tool to get more information about each group of options.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../aqlogexporter.ui" line="1867"/>
+        <location filename="../../aqlogexporter.ui" line="1886"/>
         <source>Click to exit this program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1870"/>
+        <location filename="../../aqlogexporter.ui" line="1889"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1890"/>
+        <location filename="../../aqlogexporter.ui" line="1909"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Browse the output folder using the native file browser application.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1893"/>
+        <location filename="../../aqlogexporter.ui" line="1912"/>
         <source>Browse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1935"/>
+        <location filename="../../aqlogexporter.ui" line="1938"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Open the output file in the associated application (if any).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1938"/>
+        <location filename="../../aqlogexporter.ui" line="1941"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1955"/>
+        <location filename="../../aqlogexporter.ui" line="1958"/>
         <source>Export Result Actions:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1962"/>
+        <location filename="../../aqlogexporter.ui" line="1965"/>
         <source>Get help for the different groups of options by clicking on them.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1965"/>
+        <location filename="../../aqlogexporter.ui" line="1968"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1982"/>
+        <location filename="../../aqlogexporter.ui" line="1819"/>
         <source>Select a language for the user interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1985"/>
+        <location filename="../../aqlogexporter.ui" line="1822"/>
         <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../aqlogexporter.ui" line="1988"/>
+        <source>Tip: Hover over form fields for details, and/or use the Help buttonl to get more information about each group of options.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -738,68 +738,78 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="166"/>
+        <location filename="../../aqlogexporter.cc" line="126"/>
+        <source>Click to open online help in your browser.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../aqlogexporter.cc" line="173"/>
         <source>Please specify a log file to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="170"/>
+        <location filename="../../aqlogexporter.cc" line="177"/>
         <source>Log file not found, please verify your entry: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="176"/>
+        <location filename="../../aqlogexporter.cc" line="183"/>
         <source>Please specify a file for the output.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="179"/>
+        <location filename="../../aqlogexporter.cc" line="186"/>
         <source>Please choose at least one value to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="190"/>
+        <location filename="../../aqlogexporter.cc" line="197"/>
         <source>AQ Log Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="257"/>
+        <location filename="../../aqlogexporter.cc" line="264"/>
         <source>The directory you specified for output (%1) does not exist. The program will attempt to create it during export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="320"/>
+        <location filename="../../aqlogexporter.cc" line="327"/>
         <source>Confirm Overwrite Existing File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="779"/>
+        <location filename="../../aqlogexporter.cc" line="787"/>
         <source>Current Language changed to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="821"/>
+        <location filename="../../aqlogexporter.cc" line="803"/>
+        <source>Could not open help page in your browser. To get to the online help, please go to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../aqlogexporter.cc" line="840"/>
         <source>Select AQ Log File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="822"/>
+        <location filename="../../aqlogexporter.cc" line="841"/>
         <source>AQ Log File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="822"/>
-        <location filename="../../aqlogexporter.cc" line="874"/>
+        <location filename="../../aqlogexporter.cc" line="841"/>
+        <location filename="../../aqlogexporter.cc" line="893"/>
         <source>All File Types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="873"/>
+        <location filename="../../aqlogexporter.cc" line="892"/>
         <source>Select Output File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="874"/>
+        <location filename="../../aqlogexporter.cc" line="893"/>
         <source>Export File Types</source>
         <translation type="unfinished"></translation>
     </message>

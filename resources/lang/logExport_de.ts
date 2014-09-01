@@ -418,7 +418,7 @@
     <message>
         <location filename="../../aqlogexporter.ui" line="791"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Automatically derive export file name and location from the log file name, location, and export format.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Automatisch ableiten Exportdateinamen und Speicherort der Protokolldateiname, Speicherort und Exportformat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../aqlogexporter.ui" line="841"/>
@@ -653,74 +653,74 @@
         <translation>Auslöseverzögerung:</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1818"/>
+        <location filename="../../aqlogexporter.ui" line="1850"/>
         <source>Click to perform export.</source>
         <translation>Export</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1821"/>
+        <location filename="../../aqlogexporter.ui" line="1853"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1835"/>
-        <source>Tip: Hover over form fields for details, and/or use the &quot;What&apos;s this&quot; tool to get more information about each group of options.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../aqlogexporter.ui" line="1867"/>
+        <location filename="../../aqlogexporter.ui" line="1886"/>
         <source>Click to exit this program.</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1870"/>
+        <location filename="../../aqlogexporter.ui" line="1889"/>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1890"/>
+        <location filename="../../aqlogexporter.ui" line="1909"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Browse the output folder using the native file browser application.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1893"/>
+        <location filename="../../aqlogexporter.ui" line="1912"/>
         <source>Browse</source>
         <translation>Durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1935"/>
+        <location filename="../../aqlogexporter.ui" line="1938"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Open the output file in the associated application (if any).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1938"/>
+        <location filename="../../aqlogexporter.ui" line="1941"/>
         <source>Open</source>
         <translation>Offene</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1955"/>
+        <location filename="../../aqlogexporter.ui" line="1958"/>
         <source>Export Result Actions:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1962"/>
+        <location filename="../../aqlogexporter.ui" line="1965"/>
         <source>Get help for the different groups of options by clicking on them.</source>
-        <translation type="unfinished">Hilfe.</translation>
+        <translation type="unfinished">Optionen Hilfe.</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1965"/>
+        <location filename="../../aqlogexporter.ui" line="1968"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1982"/>
+        <location filename="../../aqlogexporter.ui" line="1819"/>
         <source>Select a language for the user interface.</source>
         <translation>Wählen Sie Sprache.</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.ui" line="1985"/>
+        <location filename="../../aqlogexporter.ui" line="1822"/>
         <source>Language</source>
         <translation>Sprache</translation>
+    </message>
+    <message>
+        <location filename="../../aqlogexporter.ui" line="1988"/>
+        <source>Tip: Hover over form fields for details, and/or use the Help buttonl to get more information about each group of options.</source>
+        <translation type="unfinished">Tipp: Verwenden Sie das Tool &quot;Was ist&quot; (? Symbol) um weitere Informationen zu jeder Gruppe von Optionen zu erhalten.</translation>
     </message>
     <message>
         <location filename="../../aqlogexporter.ui" line="2014"/>
@@ -738,68 +738,78 @@
         <translation>Exportstatus erscheint hier...</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="166"/>
+        <location filename="../../aqlogexporter.cc" line="126"/>
+        <source>Click to open online help in your browser.</source>
+        <translation type="unfinished">Hilfe.</translation>
+    </message>
+    <message>
+        <location filename="../../aqlogexporter.cc" line="173"/>
         <source>Please specify a log file to export.</source>
         <translation>Bitte geben Sie eine Log-Datei zu exportieren.</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="170"/>
+        <location filename="../../aqlogexporter.cc" line="177"/>
         <source>Log file not found, please verify your entry: %1</source>
         <translation>Log-Datei nicht gefunden, bitte überprüfen Sie Ihre Eingabe: &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="176"/>
+        <location filename="../../aqlogexporter.cc" line="183"/>
         <source>Please specify a file for the output.</source>
         <translation>Bitte geben Sie eine Datei für die Ausgabe.</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="179"/>
+        <location filename="../../aqlogexporter.cc" line="186"/>
         <source>Please choose at least one value to export.</source>
         <translation>Bitte wählen Sie mindestens einen Wert exportieren.</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="190"/>
+        <location filename="../../aqlogexporter.cc" line="197"/>
         <source>AQ Log Export</source>
         <translation>AQ-Log-Export</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="257"/>
+        <location filename="../../aqlogexporter.cc" line="264"/>
         <source>The directory you specified for output (%1) does not exist. The program will attempt to create it during export.</source>
         <translation>Das Verzeichnis, das Sie für die Ausgabe (%1) angegeben ist nicht vorhanden. Das Programm wird versuchen, ihn während des Exports zu erstellen.</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="320"/>
+        <location filename="../../aqlogexporter.cc" line="327"/>
         <source>Confirm Overwrite Existing File</source>
         <translation>Bestätigen Sie vorhandene Datei überschreiben</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="779"/>
+        <location filename="../../aqlogexporter.cc" line="787"/>
         <source>Current Language changed to %1</source>
         <translation>Aktuelle Sprache auf ändern %1</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="821"/>
+        <location filename="../../aqlogexporter.cc" line="803"/>
+        <source>Could not open help page in your browser. To get to the online help, please go to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../aqlogexporter.cc" line="840"/>
         <source>Select AQ Log File</source>
         <translation>AQ-Log-Datei auswählen</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="822"/>
+        <location filename="../../aqlogexporter.cc" line="841"/>
         <source>AQ Log File</source>
         <translation>AQ-Log-Datei</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="822"/>
-        <location filename="../../aqlogexporter.cc" line="874"/>
+        <location filename="../../aqlogexporter.cc" line="841"/>
+        <location filename="../../aqlogexporter.cc" line="893"/>
         <source>All File Types</source>
         <translation>Alle Dateitypen</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="873"/>
+        <location filename="../../aqlogexporter.cc" line="892"/>
         <source>Select Output File</source>
         <translation>Wählen Sie die Ausgabedatei</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="874"/>
+        <location filename="../../aqlogexporter.cc" line="893"/>
         <source>Export File Types</source>
         <translation>Exportieren von Dateitypen</translation>
     </message>

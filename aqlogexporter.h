@@ -46,6 +46,7 @@ protected slots:
 	void changeEvent(QEvent *e);
 
 private slots:
+	void retranslateUi();
 	void setLanguage(const QString &locale);
 	void createLanguageMenu(void);
 	void languageChanged(QAction* action);
@@ -58,6 +59,7 @@ private slots:
 	void autoExportFileName();
 	void startExport();
 
+	void showAQHelp();
 	void on_lineEdit_inputFile_editingFinished();
 	void on_lineEdit_outputFile_editingFinished();
 	void on_checkBox_triggerUseGmblTrigger_toggled(bool checked);
@@ -74,14 +76,14 @@ private slots:
 	void on_toolButton_autoExportFile_clicked();
 
 private:
+	Ui::AQLogExporter *ui;
+
 	QString langPath;
 	QTranslator* currentTranslator;
 	Translators translators;
 	QString defaultLanguage;     /**< contains the default language */
 	QString currentLanguage;     /**< contains the currently loaded language */
 
-
-	Ui::AQLogExporter *ui;
 	QSettings settings;
 	QProcess ps_export;
 	QString savedOutputPath;
