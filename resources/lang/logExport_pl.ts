@@ -6,7 +6,7 @@
     <message>
         <location filename="../../aqlogexporter.ui" line="39"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the log file you want to export here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Eksport Plik</translation>
+        <translation type="unfinished">Eksport Plik</translation>
     </message>
     <message>
         <location filename="../../aqlogexporter.ui" line="42"/>
