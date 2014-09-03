@@ -708,14 +708,13 @@ void AQLogExporter::loadTranslations()
 			country = "";
 		}
 
-		qDebug() << __FILE__ << __LINE__ << "Loaded language file:" << file.absoluteFilePath() << language << country;
-
 		// construct and load translator
 		QTranslator* translator = new QTranslator(qApp);
 		if (translator->load(file.absoluteFilePath()))
 		{
 			QString locale = language + (country.length() ? "_" + country : "");
 			translators.insert(locale, translator);
+			//qDebug() << __FILE__ << __LINE__ << "Loaded language file:" << file.absoluteFilePath() << language << country;
 		}
 	}
 }
@@ -829,7 +828,11 @@ void AQLogExporter::on_toolButton_selectLogFile_clicked()
 	else if (savedLogfilePath.length())
 		dirPath = savedLogfilePath;
 	else
+#if QT_VERSION < 0x050000
 		dirPath = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
+#else
+		dirPath = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).first();
+#endif
 
 	if (!dirPath.length())
 		dirPath = QCoreApplication::applicationDirPath();
@@ -872,7 +875,11 @@ void AQLogExporter::on_toolButton_selectOutputFile_clicked()
 	else if (savedLogfilePath.length())
 		dirPath = savedLogfilePath;
 	else
+#if QT_VERSION < 0x050000
 		dirPath = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
+#else
+		dirPath = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).first();
+#endif
 
 	if (!dirPath.length())
 		dirPath = QCoreApplication::applicationDirPath();

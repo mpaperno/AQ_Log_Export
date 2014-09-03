@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.1" language="en" sourcelanguage="en">
 <context>
     <name>AQLogExporter</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../../aqlogexporter.ui" line="42"/>
         <source>Log File</source>
-        <translation type="unfinished"></translation>
+        <translation>Log File</translation>
     </message>
     <message>
         <location filename="../../aqlogexporter.ui" line="66"/>
@@ -778,38 +778,38 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="787"/>
+        <location filename="../../aqlogexporter.cc" line="788"/>
         <source>Current Language changed to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="803"/>
+        <location filename="../../aqlogexporter.cc" line="804"/>
         <source>Could not open help page in your browser. To get to the online help, please go to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="840"/>
+        <location filename="../../aqlogexporter.cc" line="845"/>
         <source>Select AQ Log File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="841"/>
+        <location filename="../../aqlogexporter.cc" line="846"/>
         <source>AQ Log File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="841"/>
-        <location filename="../../aqlogexporter.cc" line="893"/>
+        <location filename="../../aqlogexporter.cc" line="846"/>
+        <location filename="../../aqlogexporter.cc" line="902"/>
         <source>All File Types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="892"/>
+        <location filename="../../aqlogexporter.cc" line="901"/>
         <source>Select Output File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="893"/>
+        <location filename="../../aqlogexporter.cc" line="902"/>
         <source>Export File Types</source>
         <translation type="unfinished"></translation>
     </message>

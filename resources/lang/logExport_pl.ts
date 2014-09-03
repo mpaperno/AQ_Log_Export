@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pl" sourcelanguage="en">
+<TS version="2.1" language="pl" sourcelanguage="en">
 <context>
     <name>AQLogExporter</name>
     <message>
@@ -723,10 +723,6 @@
         <translation>Język</translation>
     </message>
     <message>
-        <source>Tip: Hover over form fields for details, and/or use the Help buttonl to get more information about each group of options.</source>
-        <translation type="obsolete">Tipp: Verwenden Sie das Tool &quot;Was ist&quot; (? Symbol) um weitere Informationen zu jeder Gruppe von Optionen zu erhalten.</translation>
-    </message>
-    <message>
         <location filename="../../aqlogexporter.ui" line="2014"/>
         <source>Export status will appear here.</source>
         <translation>Status eksportu pojawi się tutaj.</translation>
@@ -782,38 +778,38 @@
         <translation>Potwierdź nadpisanie istniejącego pliku</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="787"/>
+        <location filename="../../aqlogexporter.cc" line="788"/>
         <source>Current Language changed to %1</source>
         <translation>Bieżący język zmieniony na %1</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="803"/>
+        <location filename="../../aqlogexporter.cc" line="804"/>
         <source>Could not open help page in your browser. To get to the online help, please go to %1.</source>
         <translation type="unfinished">Nie można otworzyć stronę pomocy w przeglądarce. Aby dostać się do pomocy online, przejdź do %1.</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="840"/>
+        <location filename="../../aqlogexporter.cc" line="845"/>
         <source>Select AQ Log File</source>
         <translation>Wybierz plik logu AQ</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="841"/>
+        <location filename="../../aqlogexporter.cc" line="846"/>
         <source>AQ Log File</source>
         <translation>Plik logu AQ</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="841"/>
-        <location filename="../../aqlogexporter.cc" line="893"/>
+        <location filename="../../aqlogexporter.cc" line="846"/>
+        <location filename="../../aqlogexporter.cc" line="902"/>
         <source>All File Types</source>
         <translation>Wszystkie typy plików</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="892"/>
+        <location filename="../../aqlogexporter.cc" line="901"/>
         <source>Select Output File</source>
         <translation>Wybierz plik wyjściowy</translation>
     </message>
     <message>
-        <location filename="../../aqlogexporter.cc" line="893"/>
+        <location filename="../../aqlogexporter.cc" line="902"/>
         <source>Export File Types</source>
         <translation>Eksport typów plików</translation>
     </message>
