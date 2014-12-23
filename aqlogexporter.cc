@@ -12,6 +12,9 @@
 #include <QTranslator>
 #include <QDir>
 #include <QFileInfo>
+#if QT_VERSION >= 0x050000
+#include <QStandardPaths>
+#endif
 
 #include <QDebug>
 
@@ -34,7 +37,9 @@ AQLogExporter::AQLogExporter(QWidget *parent) :
 
 	ui->setupUi(this);
 
-	QString windowname = APP_NAME + " v" + APP_VERSION_TXT + " (" + QString::number(APP_VERSION, 'f', 2) + ")";
+
+	QString windowname = "%1 v%2 (%3)";
+	windowname = windowname.arg(APP_NAME).arg(APP_VERSION_TXT).arg(APP_VERSION, 8, 16, QChar('0'));
 	setWindowTitle(windowname);
 
 #ifndef QT_NO_WHATSTHIS

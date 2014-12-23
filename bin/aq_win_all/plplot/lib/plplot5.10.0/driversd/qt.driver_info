@@ -1,0 +1,3 @@
+pngqt:Qt png driver:0:qt:68:pngqt
+pdfqt:Qt PDF driver:0:qt:74:pdfqt
+extqt:External Qt driver:0:qt:75:extqt

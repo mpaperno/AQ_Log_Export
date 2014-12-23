@@ -49,7 +49,8 @@ TRANSLATIONS += resources/lang/logExport_de.ts \
 # Windows (32bit)
 win32-msvc2010|win32-msvc2012|win32-g++ {
 
-	RC_FILE = icon.rc
+	RC_FILE = resources/icon.rc
+	CONFIG += embed_manifest_exe
 
 	# Adjust paths to backslash
 	BASEDIR ~= s,/,\\,g
@@ -84,6 +85,7 @@ win32-msvc2010|win32-msvc2012|win32-g++ {
 	# copy required supporting DLLs for release version
 	CONFIG(release, debug|release) {
 		# Qt library DLLs
+		QMAKE_POST_LINK += $$quote(xcopy /D /Y "$$(QTDIR)\\bin\\icu*.dll" "$$TARGETDIR"$$escape_expand(\\n\\t))
 		QMAKE_POST_LINK += $$quote(xcopy /D /Y "$$(QTDIR)\\bin\\$${QTLIBDLLPFX}Core$${QTLIBDLLSFX}" "$$TARGETDIR"$$escape_expand(\\n\\t))
 		QMAKE_POST_LINK += $$quote(xcopy /D /Y "$$(QTDIR)\\bin\\$${QTLIBDLLPFX}Gui$${QTLIBDLLSFX}" "$$TARGETDIR"$$escape_expand(\\n\\t))
 		greaterThan(QT_MAJOR_VERSION, 4) {
@@ -91,10 +93,10 @@ win32-msvc2010|win32-msvc2012|win32-g++ {
 		}
 		# Compiler-specific DLLs
 		win32-msvc2010 {
-			 QMAKE_POST_LINK += $$quote(xcopy /D /Y "\"C:\\Program Files \(x86\)\\Microsoft Visual Studio 10.0\\VC\\redist\\x86\\Microsoft.VC100.CRT\\*.dll\""  "$${TARGETDIR}\\"$$escape_expand(\\n))
+			 QMAKE_POST_LINK += $$quote(xcopy /D /Y "\"C:\\Program Files \(x86\)\\Microsoft Visual Studio 10.0\\VC\\redist\\x86\\Microsoft.VC100.CRT\\msvc?100.dll\""  "$${TARGETDIR}\\"$$escape_expand(\\n))
 		}
 		win32-msvc2012 {
-			 QMAKE_POST_LINK += $$quote(xcopy /D /Y "\"C:\\Program Files \(x86\)\\Microsoft Visual Studio 11.0\\VC\\redist\\x86\\Microsoft.VC110.CRT\\*.dll\""  "$${TARGETDIR}\\"$$escape_expand(\\n))
+			 QMAKE_POST_LINK += $$quote(xcopy /D /Y "\"C:\\Program Files \(x86\)\\Microsoft Visual Studio 11.0\\VC\\redist\\x86\\Microsoft.VC110.CRT\\msvc?110.dll\""  "$${TARGETDIR}\\"$$escape_expand(\\n))
 		}
 		win32-g++ {
 			# we need to know where MinGW lives so we can copy some DLLs from there.
@@ -109,9 +111,11 @@ win32-msvc2010|win32-msvc2012|win32-g++ {
 # MAC OS X
 macx|macx-g++42|macx-g++|macx-llvm: {
 
+	#QMAKE_INFO_PLIST = resources/Info.plist
 	ICON = resources/app_icon.icns
 	DEFINES += QT_NO_WHATSTHIS
 	QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.6
+	QMAKE_MAC_SDK = macosx10.9
 
 	# Copy AQ files
 	QMAKE_POST_LINK += mkdir -p $${TARGETDIR}/$${TARGET}.app/Contents/MacOS/aq/bin
@@ -120,6 +124,8 @@ macx|macx-g++42|macx-g++|macx-llvm: {
 	# Copy language files
 	QMAKE_POST_LINK += && mkdir -p $${TARGETDIR}/$${TARGET}.app/Contents/MacOS/lang
 	QMAKE_POST_LINK += && cp -rf $${BASEDIR}/resources/lang/*.qm $${TARGETDIR}/$${TARGET}.app/Contents/MacOS/lang
+
+	QMAKE_POST_LINK += && $$dirname(QMAKE_QMAKE)/macdeployqt $${TARGET}.app
 
 }
 
